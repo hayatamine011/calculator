@@ -6,7 +6,7 @@ pipeline {
   }
 	
   stages {
-    stage("Compile") {
+    stage("transfert") {
       steps {
         sh "ansible-playbook -i inventory/staging playbook.yml"
       }

@@ -5,4 +5,5 @@
   become: true
   gather_facts: true
   roles:
+    - ansible-jenkins
     - deploy

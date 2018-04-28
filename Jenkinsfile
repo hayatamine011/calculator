@@ -17,7 +17,7 @@ pipeline {
         sh 'git pull origin'
 	sh 'ls .'
 	     
-	      sh 'ansible-playbook -i  inventory/staging playbook.yml'
+	      sh 'ansible-playbook -i  inventory/staging playbook.yml -vvv'
         echo 'Tagging the Release'
        
 echo "salam world :)!"

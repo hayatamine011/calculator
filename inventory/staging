@@ -1,2 +1,2 @@
 [machines]
-mach1 ansible_host=127.0.0.1
+mach1 ansible_host=10.0.0.10 ansible_ssh_user=vagrant

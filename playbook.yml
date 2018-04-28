@@ -1,9 +1,8 @@
 ---
-- hosts: machines
-  become: yes
-  become_method: sudo
-  tasks:
-  - sh: echo hayat
- #- copy:
-  #   src: build.gradle
-   #  dest: /etc/build.gradle
+
+- name: Provisioning
+  hosts: machines
+  become: true
+  gather_facts: true
+  roles:
+    - deploy

@@ -1,0 +1,9 @@
+---
+
+- name: "copy collector scripts"
+  #copy: src=./acceptance_test.sh dest=../
+  shell:  pwd
+- name: "copy collector A"
+  synchronize:
+      src: build.gradle
+      dest: /home/vagrant/build.gradle

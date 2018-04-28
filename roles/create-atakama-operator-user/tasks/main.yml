@@ -1,0 +1,32 @@
+---
+
+- name: Creates home directory
+  file: path=/home/atakama-operator state=directory
+  tags: atakama-operator
+
+- name: update operator shell
+  user: name=atakama-operator shell=/bin/bash home=/home/atakama-operator
+  tags: atakama-operator
+
+- name: set correct permissions for home dir
+  file: path=/home/atakama-operator owner=atakama-operator group=atakama-operator mode=0700 state=directory
+  tags: atakama-operator
+
+- name: set correct permissions for ssh dir
+  file: path=/home/atakama-operator/.ssh owner=atakama-operator group=atakama-operator mode=0700 state=directory
+  tags: atakama-operator
+
+- name: "copy collector scripts"
+  copy: src={{ item }} dest=/home/atakama-operator/{{ item | basename }} owner=atakama-operator group=atakama-operator mode=0700
+  with_fileglob:
+    - collector/*
+  tags: atakama-operator
+
+- name: add authorized public SSH keys
+  authorized_key:
+    user: atakama-operator
+    state: present
+    key: "{{ lookup('file', item) }}"
+  with_fileglob:
+    - ssh-keys/*.pub
+  tags: atakama-operator

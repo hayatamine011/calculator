@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage("transfert") {
       steps {
-	      sh "echo hello"
+	      sh "echo ${WORKSPACE}"
        
       }
     }}

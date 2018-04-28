@@ -14,7 +14,7 @@ pipeline {
         echo "Checking Out staging Branch"
         sh 'git checkout master'
         sh 'git pull origin'
-	
+	sh 'cd calculator'
         echo 'Tagging the Release'
        
 echo "salam world :)!"

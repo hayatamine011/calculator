@@ -12,8 +12,7 @@ pipeline {
 	      echo "Stashing Any Local Changes"
         sh 'git stash'
         echo "Checking Out staging Branch"
-	sh 'mkdir calculator'
-	sh 'cd calculator'
+	
         sh 'git checkout master'
         sh 'git pull origin'
 	sh 'ls .'

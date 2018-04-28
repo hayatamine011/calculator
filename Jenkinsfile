@@ -11,7 +11,4 @@ pipeline {
         sh "ansible-playbook -i inventory/staging playbook.yml"
       }
     }
-
-
-
 }

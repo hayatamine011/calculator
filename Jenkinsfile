@@ -9,7 +9,7 @@ pipeline {
     stage("transfert") {
       steps {
 	      sh "echo hello"
-        #sh "ansible-playbook -i inventory/staging playbook.yml"
+       
       }
     }}
 }

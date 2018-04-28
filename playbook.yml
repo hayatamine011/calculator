@@ -3,6 +3,7 @@
   become: yes
   become_method: sudo
   tasks:
- - copy:
-     src: build.gradle
-     dest: /etc/build.gradle
+  - sh: echo hayat
+ #- copy:
+  #   src: build.gradle
+   #  dest: /etc/build.gradle
